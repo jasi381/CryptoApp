@@ -7,7 +7,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.jasmeet.cryptoapp.R
 import com.jasmeet.cryptoapp.databinding.FragmentTopLossGainBinding
 import com.jasmeet.cryptoapp.fragment.adapter.MarketAdapter
 import com.jasmeet.cryptoapp.fragment.apis.ApiInterface
@@ -57,14 +56,22 @@ class TopLossGainFragment : Fragment() {
                             list.add(dataItem[i])
 
                         }
-                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(requireContext(),list)
+                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(
+                            requireContext(),
+                            list,
+                            "home"
+                        )
                     }else{
                         list.clear()
                         for (i in 0..9){
                             list.add(dataItem[dataItem.size-1-i])
 
                         }
-                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(requireContext(),list)
+                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(
+                            requireContext(),
+                            list,
+                            "home"
+                        )
                     }
                 }
             }

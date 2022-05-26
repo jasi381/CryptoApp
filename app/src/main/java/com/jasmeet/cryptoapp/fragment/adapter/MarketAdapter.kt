@@ -10,9 +10,12 @@ import com.bumptech.glide.Glide
 import com.jasmeet.cryptoapp.R
 import com.jasmeet.cryptoapp.databinding.CurrencyItemLayoutBinding
 import com.jasmeet.cryptoapp.fragment.HomeFragmentDirections
+import com.jasmeet.cryptoapp.fragment.MarketFragmentDirections
+import com.jasmeet.cryptoapp.fragment.WatchListFragment
+import com.jasmeet.cryptoapp.fragment.WatchListFragmentDirections
 import com.jasmeet.cryptoapp.fragment.models.CryptoCurrency
 
-class MarketAdapter(var context: Context,var list: List<CryptoCurrency>) :RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
+class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String) :RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
 
     inner class MarketViewHolder(view: View):RecyclerView.ViewHolder(view){
         var binding = CurrencyItemLayoutBinding.bind(view)
@@ -51,13 +54,34 @@ class MarketAdapter(var context: Context,var list: List<CryptoCurrency>) :Recycl
             holder.binding.currencyChangeTextView.text =" ${String.format("%.02f", item.quotes[0].percentChange24h)} %"
 
         }
+
+
         holder.itemView.setOnClickListener {
-            findNavController(it).navigate(
-                HomeFragmentDirections.actionHomeFragmentToDetailFragment(item)
-            )
+
+            if(type == "home") {
+
+                findNavController(it).navigate(
+                    HomeFragmentDirections.actionHomeFragmentToDetailFragment(item)
+                )
+            }else if (type  == "market"){
+                findNavController(it).navigate(
+                    MarketFragmentDirections.actionMarketFragmentToDetailFragment(item)
+                )
+            }else{
+                findNavController(it).navigate(
+                    WatchListFragmentDirections.actionWatchListFragmentToDetailFragment(item)
+                )
+
+            }
         }
 
     }
+    fun updateData(dataItem : List<CryptoCurrency>){
+        list = dataItem
+        notifyDataSetChanged()
+    }
+
+
 
     override fun getItemCount(): Int {
      return list.size

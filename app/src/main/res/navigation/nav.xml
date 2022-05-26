@@ -18,12 +18,20 @@
         android:id="@+id/marketFragment"
         android:name="com.jasmeet.cryptoapp.fragment.MarketFragment"
         android:label="fragment_market"
-        tools:layout="@layout/fragment_market" />
+        tools:layout="@layout/fragment_market" >
+        <action
+            android:id="@+id/action_marketFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/watchListFragment"
+        android:id="@+id/watchlistFragment"
         android:name="com.jasmeet.cryptoapp.fragment.WatchListFragment"
         android:label="fragment_watch_list"
-        tools:layout="@layout/fragment_watch_list" />
+        tools:layout="@layout/fragment_watch_list" >
+        <action
+            android:id="@+id/action_watchListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.jasmeet.cryptoapp.fragment.DetailFragment"

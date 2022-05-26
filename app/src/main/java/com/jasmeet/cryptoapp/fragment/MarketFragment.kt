@@ -1,60 +1,99 @@
 package com.jasmeet.cryptoapp.fragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
-import com.jasmeet.cryptoapp.R
+import androidx.lifecycle.lifecycleScope
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.jasmeet.cryptoapp.databinding.FragmentMarketBinding
+import com.jasmeet.cryptoapp.fragment.adapter.MarketAdapter
+import com.jasmeet.cryptoapp.fragment.apis.ApiInterface
+import com.jasmeet.cryptoapp.fragment.apis.ApiUtilities
+import com.jasmeet.cryptoapp.fragment.models.CryptoCurrency
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.util.*
+import kotlin.collections.ArrayList
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MarketFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class MarketFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentMarketBinding
+    private lateinit var list: List<CryptoCurrency>
+    private lateinit var adapter: MarketAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_market, container, false)
+        binding = FragmentMarketBinding.inflate(layoutInflater)
+
+        list = listOf()
+
+        adapter = MarketAdapter(requireContext(),list, "market")
+        binding.currencyRecyclerView.adapter= adapter
+
+        lifecycleScope.launch(Dispatchers.IO){
+            val res = ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
+
+            if(res.body()!=null){
+                withContext(Dispatchers.Main){
+                    list = res.body()!!.data.cryptoCurrencyList
+
+                    adapter.updateData(list)
+
+
+                    binding.spinKitView.visibility = GONE
+                }
+
+            }
+
+        }
+
+        searchCoin()
+
+
+        return binding.root
+    }
+    lateinit var searchText :String
+
+    private fun searchCoin() {
+        binding.searchEditText.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                searchText =  p0.toString().toLowerCase()
+                updateRecyclerView()
+            }
+        })
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MarketFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MarketFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun updateRecyclerView() {
+        val data = ArrayList<CryptoCurrency>()
+
+        for (item in list){
+            val coinName = item.name.lowercase(Locale.getDefault())
+            val coinSymbol = item.symbol.lowercase(Locale.getDefault())
+
+            if (coinName.contains(searchText)|| coinSymbol.contains(searchText)){
+                data.add(item)
             }
+
+        }
+
+        adapter.updateData(data)
+
     }
+
+
 }

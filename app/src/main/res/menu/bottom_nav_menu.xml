@@ -9,14 +9,14 @@
         android:title="Home"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/MarketFragment"
+    <item android:id="@+id/marketFragment"
         android:enabled="true"
         android:icon="@drawable/ic_stats"
         android:title="Market"
         app:showAsAction="always"
         />
 
-    <item android:id="@+id/WatchlistFragment"
+    <item android:id="@+id/watchlistFragment"
         android:enabled="true"
         android:icon="@drawable/ic_bookmark"
         android:title="Watchlist"
