@@ -6,7 +6,7 @@
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginBottom="4dp"
-    app:cardBackgroundColor="@color/royal_blue_dark"
+    app:cardBackgroundColor="#EA738DFF"
     app:cardCornerRadius="12dp"
     app:cardElevation="8dp"
     xmlns:tools="http://schemas.android.com/tools"
@@ -83,7 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/currencyChangeTextView"
                 app:layout_constraintEnd_toStartOf="@+id/currencyChangeTextView"
                 app:layout_constraintTop_toTopOf="@+id/currencyChangeTextView"
-                tools:srcCompat="@drawable/ic_caret_up" />
+                tools:srcCompat="@drawable/ic_baseline_arrow_drop_up_24" />
 
             <TextView
                 android:id="@+id/currencyChangeTextView"

@@ -180,14 +180,14 @@ class DetailFragment : Fragment() {
             " ${String.format("$%.4f", data.quotes[0].price)} "
 
         if(data.quotes!![0].percentChange24h> 0){
-            binding.detailChangeTextView.setTextColor(requireContext().resources.getColor(R.color.green))
-            binding.detailChangeImageView.setImageResource(R.drawable.ic_caret_up)
+            binding.detailChangeTextView.setTextColor(requireContext().resources.getColor(R.color.black))
+            binding.detailChangeImageView.setImageResource(R.drawable.ic_baseline_arrow_drop_up_24)
             binding.detailChangeTextView.text ="+ ${String.format("%.02f", data.quotes[0].percentChange24h)} %"
 
 
         }else{
             binding.detailChangeImageView.setImageResource(R.drawable.ic_caret_down)
-            binding.detailChangeTextView.setTextColor(requireContext().resources.getColor(R.color.red))
+            binding.detailChangeTextView.setTextColor(requireContext().resources.getColor(R.color.teal_700))
             binding.detailChangeTextView.text =" ${String.format("%.02f", data.quotes[0].percentChange24h)} %"
 
         }

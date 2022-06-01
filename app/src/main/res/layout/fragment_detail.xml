@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_blue">
+    android:background="#34B7F1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailAppbar"
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:textColor="@color/green"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/detailChangeImageView"
             app:layout_constraintTop_toBottomOf="@+id/detailPriceTextView"
@@ -94,10 +94,11 @@
             app:layout_constraintBottom_toBottomOf="@+id/detailChangeTextView"
             app:layout_constraintStart_toStartOf="@+id/detailPriceTextView"
             app:layout_constraintTop_toTopOf="@+id/detailChangeTextView"
-            tools:srcCompat="@drawable/ic_caret_up" />
+            tools:srcCompat="@drawable/ic_baseline_arrow_drop_up_24" />
 
         <ImageView
             android:id="@+id/detailImageView"
+
             android:layout_width="64dp"
             android:layout_height="64dp"
             app:layout_constraintBottom_toBottomOf="parent"
