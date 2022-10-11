@@ -1,4 +1,4 @@
-package com.jasmeet.cryptoapp.fragment.adapter
+package com.jasmeet.cryptoapp.adapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

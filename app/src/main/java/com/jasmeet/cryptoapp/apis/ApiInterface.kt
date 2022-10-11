@@ -1,4 +1,4 @@
-package com.jasmeet.cryptoapp.fragment.apis
+package com.jasmeet.cryptoapp.apis
 
 import com.jasmeet.cryptoapp.fragment.models.MarketModel
 import retrofit2.Response

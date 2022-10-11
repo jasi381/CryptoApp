@@ -1,4 +1,4 @@
-package com.jasmeet.cryptoapp.fragment.apis
+package com.jasmeet.cryptoapp.apis
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

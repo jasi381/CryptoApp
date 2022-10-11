@@ -11,9 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.jasmeet.cryptoapp.databinding.FragmentWatchListBinding
-import com.jasmeet.cryptoapp.fragment.adapter.MarketAdapter
-import com.jasmeet.cryptoapp.fragment.apis.ApiInterface
-import com.jasmeet.cryptoapp.fragment.apis.ApiUtilities
+import com.jasmeet.cryptoapp.adapter.MarketAdapter
+import com.jasmeet.cryptoapp.apis.ApiInterface
+import com.jasmeet.cryptoapp.apis.ApiUtilities
 import com.jasmeet.cryptoapp.fragment.models.CryptoCurrency
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

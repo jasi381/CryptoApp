@@ -14,4 +14,6 @@
     <color name="purple">#B835FE</color>
     <color name="green">#4FC281</color>
     <color name="red">#D6455d</color>
+
+    <color name="stats">#3944bc</color>
 </resources>

@@ -8,9 +8,9 @@ import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.jasmeet.cryptoapp.databinding.FragmentTopLossGainBinding
-import com.jasmeet.cryptoapp.fragment.adapter.MarketAdapter
-import com.jasmeet.cryptoapp.fragment.apis.ApiInterface
-import com.jasmeet.cryptoapp.fragment.apis.ApiUtilities
+import com.jasmeet.cryptoapp.adapter.MarketAdapter
+import com.jasmeet.cryptoapp.apis.ApiInterface
+import com.jasmeet.cryptoapp.apis.ApiUtilities
 import com.jasmeet.cryptoapp.fragment.models.CryptoCurrency
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

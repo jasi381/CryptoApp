@@ -12,10 +12,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jasmeet.cryptoapp.databinding.FragmentHomeBinding
-import com.jasmeet.cryptoapp.fragment.adapter.TopLossGainPagerAdapter
-import com.jasmeet.cryptoapp.fragment.adapter.TopMarketAdapter
-import com.jasmeet.cryptoapp.fragment.apis.ApiInterface
-import com.jasmeet.cryptoapp.fragment.apis.ApiUtilities
+import com.jasmeet.cryptoapp.adapter.TopLossGainPagerAdapter
+import com.jasmeet.cryptoapp.adapter.TopMarketAdapter
+import com.jasmeet.cryptoapp.apis.ApiInterface
+import com.jasmeet.cryptoapp.apis.ApiUtilities
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
 
     private fun getTopCurrencyList() {
         lifecycleScope.launch(Dispatchers.IO){
-            val res =ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
+            val res = ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
 
             withContext(Dispatchers.Main){
                 binding.topCurrencyRecyclerView.adapter = TopMarketAdapter(requireContext(),res.body()!!.data.cryptoCurrencyList)

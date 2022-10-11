@@ -1,9 +1,10 @@
-package com.jasmeet.cryptoapp
+package com.jasmeet.cryptoapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.navigation.fragment.findNavController
+import com.jasmeet.cryptoapp.R
 import com.jasmeet.cryptoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
