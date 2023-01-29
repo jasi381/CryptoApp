@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3944Bc">
+    android:background="#3d5a80">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailAppbar"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:paddingStart="12dp"
         android:paddingTop="8dp"
-        android:paddingRight="12dp"
+        android:paddingEnd="12dp"
         android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +46,7 @@
             android:id="@+id/detailSymbolTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="#FFF700"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,9 +60,7 @@
         android:id="@+id/detailPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailAppbar">
@@ -114,6 +113,7 @@
         android:id="@+id/detailChart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailPrice">
@@ -126,8 +126,8 @@
             android:background="@null"
             android:text="@string/_1m"
             android:textAllCaps="false"
-            android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="#fee440"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button1"
@@ -140,8 +140,8 @@
             android:background="@null"
             android:text="@string/_1w"
             android:textAllCaps="false"
-            android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="#fee440"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/button"
             app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintHorizontal_bias="0.5"
@@ -155,8 +155,8 @@
             android:background="@drawable/active_button"
             android:text="@string/_1d"
             android:textAllCaps="false"
-            android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="#fee440"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/button1"
             app:layout_constraintEnd_toStartOf="@+id/button1"
             app:layout_constraintHorizontal_bias="0.5"
@@ -170,8 +170,8 @@
             android:background="@null"
             android:text="@string/_4h"
             android:textAllCaps="false"
-            android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="#fee440"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/button2"
             app:layout_constraintEnd_toStartOf="@+id/button2"
             app:layout_constraintHorizontal_bias="0.5"
@@ -185,8 +185,8 @@
             android:background="@null"
             android:text="@string/_1h"
             android:textAllCaps="false"
-            android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="#fee440"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/button3"
             app:layout_constraintEnd_toStartOf="@+id/button3"
             app:layout_constraintHorizontal_bias="0.5"
@@ -200,8 +200,8 @@
             android:background="@null"
             android:text="@string/_15m"
             android:textAllCaps="false"
-            android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="#fee440"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/button4"
             app:layout_constraintEnd_toStartOf="@+id/button4"
             app:layout_constraintHorizontal_bias="0.5"
@@ -211,8 +211,8 @@
         <WebView
             android:id="@+id/detaillChartWebView"
             android:layout_width="match_parent"
-            android:layout_height="248dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -220,33 +220,5 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/AllDetail"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/detail_content_bg"
-        android:paddingStart="12dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailChart">
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/detailRecyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

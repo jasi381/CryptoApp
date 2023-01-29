@@ -35,11 +35,20 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.jasmeet.cryptoapp.fragment.DetailFragment"
-        android:label="DetailFragment" >
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="data"
             app:argType="com.jasmeet.cryptoapp.fragment.models.CryptoCurrency"
             app:nullable="true"
             android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_detailFragment_to_profileFragment"
+            app:destination="@id/ProfileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="com.jasmeet.cryptoapp.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

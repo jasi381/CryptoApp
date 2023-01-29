@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
     id 'org.jetbrains.kotlin.android'
     id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.jasmeet.cryptoapp"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -31,26 +32,27 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     namespace 'com.jasmeet.cryptoapp'
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     // bottom navigation
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+
     //loader
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
@@ -59,11 +61,43 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //glide
-    implementation 'com.github.bumptech.glide:glide:4.14.0'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.0'
 
     //gif
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
 
+    //lottie
+    implementation 'com.airbnb.android:lottie:5.2.0'
 
+    //firebase bom
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+
+    //firebase auth
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    //firebase fireStore kotlin
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    //cloud storage ktx
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+    //google sign in
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+
+    //intuit sdp
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+
+    //loading button
+    implementation 'br.com.simplepass:loading-button-android:2.2.0'
+
+    //otp view
+    implementation 'com.chaos.view:pinview:1.4.4'
+
+    //navigation component
+    def nav_version = "2.5.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }
+

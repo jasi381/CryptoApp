@@ -8,26 +8,28 @@
     android:background="#3944bc">
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
+        app:strokeColor="#ffd380"
+        app:strokeWidth="1dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         app:cardCornerRadius="12dp"
+        android:layout_margin="2dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:layout_width="match_parent"
             android:layout_height="182dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/banner" />
+            android:scaleType="fitXY"
+            android:src="@drawable/billboard" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/topCurrencyRecyclerView"

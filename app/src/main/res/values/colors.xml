@@ -12,8 +12,11 @@
     <color name="dark_blue">#7735EF</color>
     <color name="dark_purple">#9127bF</color>
     <color name="purple">#B835FE</color>
-    <color name="green">#4FC281</color>
-    <color name="red">#D6455d</color>
+    <color name="green">#39FF14</color>
+    <color name="red">#EC5800</color>
 
     <color name="stats">#3944bc</color>
+    <color name="grey">#ececec</color>
+    <color name="blue">#0096FF</color>
+    <color name="text_color">#1B1212</color>
 </resources>

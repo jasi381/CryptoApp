@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "449641839820",
+    "project_id": "login-mvvm-bb0e0",
+    "storage_bucket": "login-mvvm-bb0e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449641839820:android:9360223199c8ade8661669",
+        "android_client_info": {
+          "package_name": "com.jasmeet.cryptoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449641839820-6cut447pglqd53hfdav9v9cjujhii38s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jasmeet.cryptoapp",
+            "certificate_hash": "1453617a80d4ec8a188db43a081d8fefef74de2f"
+          }
+        },
+        {
+          "client_id": "449641839820-3mam93nnrs354b3m5sm2qv906pk0oj1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsbskf-cFlnhXmywLyixCqhw0Dq3zP3ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449641839820-3mam93nnrs354b3m5sm2qv906pk0oj1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

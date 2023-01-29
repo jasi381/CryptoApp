@@ -34,30 +34,40 @@ class WatchListFragment : Fragment() {
         binding= FragmentWatchListBinding.inflate(layoutInflater)
         readData()
 
-        lifecycleScope.launch(Dispatchers.IO){
-            val res = ApiUtilities.getInstance().create(ApiInterface::class.java)
-                .getMarketData()
-            if (res.body()!= null){
+        //check if the watchlist is empty
+        if (watchList.isEmpty()) {
+            binding.constraintLayout5.visibility = GONE
+            binding.emptyWatchlist.visibility = View.VISIBLE
+        }else {
 
-                withContext(Dispatchers.Main){
-                    watchListItem = ArrayList()
-                    watchListItem.clear()
+            lifecycleScope.launch(Dispatchers.IO) {
+                val res = ApiUtilities.getInstance().create(ApiInterface::class.java)
+                    .getMarketData()
+                if (res.body() != null) {
+
+                    withContext(Dispatchers.Main) {
+                        watchListItem = ArrayList()
+                        watchListItem.clear()
 
 
-                    for (watchData in watchList){
-                        for (item in res.body()!!.data.cryptoCurrencyList){
+                        for (watchData in watchList) {
+                            for (item in res.body()!!.data.cryptoCurrencyList) {
 
-                            if (watchData == item.symbol){
-                                watchListItem.add(item)
+                                if (watchData == item.symbol) {
+                                    watchListItem.add(item)
+                                }
+
                             }
-
                         }
+
+                        binding.constraintLayout5.visibility = View.VISIBLE
+                        binding.spinKitView.visibility = GONE
+                        binding.emptyWatchlist.visibility = GONE
+                        binding.watchlistRecyclerView.adapter =
+                            MarketAdapter(requireContext(), watchListItem, "watchfragment")
                     }
 
-                    binding.spinKitView.visibility= GONE
-                    binding.watchlistRecyclerView.adapter = MarketAdapter(requireContext(), watchListItem,"watchfragment")
                 }
-
             }
         }
         return binding.root

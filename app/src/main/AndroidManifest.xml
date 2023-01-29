@@ -10,22 +10,21 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.CryptoApp">
+        
+        <activity
+            android:name=".activities.LoginRegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
-            android:exported="false"/>
-
-
-
-        <activity android:name=".activities.splash_screen"
+            android:exported="false" />
+        <activity
+            android:name=".activities.splash_screen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 

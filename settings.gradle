@@ -3,6 +3,10 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
     }
 }
 dependencyResolutionManagement {
@@ -11,6 +15,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }
+        jcenter()
+
     }
 }
 rootProject.name = "Crypto App"

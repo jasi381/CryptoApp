@@ -72,7 +72,7 @@ class MarketFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                searchText =  p0.toString().toLowerCase()
+                searchText = p0.toString().lowercase(Locale.ROOT)
                 updateRecyclerView()
             }
         })

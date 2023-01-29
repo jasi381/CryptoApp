@@ -5,13 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3490dc"
     tools:context=".activities.splash_screen">
 
-
-    <pl.droidsonroids.gif.GifImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/eth_drib_v1"
-        android:scaleType="centerCrop"/>
+        app:lottie_rawRes="@raw/splash"
+        app:lottie_autoPlay="true"
+        app:layout_optimizationLevel="direct"
+        app:lottie_loop="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

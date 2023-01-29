@@ -15,5 +15,8 @@
         <item name="fontFamily">@font/roboto_medium_italic</item>
     </style>
 
+    <style name= "InputText" parent="Widget.Design.TextInputLayout"
+        strokeColor="@color/white"/>
+
 
 </resources>

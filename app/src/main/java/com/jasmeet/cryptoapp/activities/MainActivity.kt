@@ -24,4 +24,10 @@ class MainActivity : AppCompatActivity() {
         popupMenu.inflate(R.menu.bottom_nav_menu)
         binding.bottomBar.setupWithNavController(popupMenu.menu, navController)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        //close the app
+        finish()
+    }
 }
